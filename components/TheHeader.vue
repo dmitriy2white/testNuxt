@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="header">
-            <div class="logo">
+            <div @click="show=false" class="logo">
                 <NuxtLink to="/">
                     <img src="@/assets/logo.png">
                 </NuxtLink>
@@ -21,7 +21,7 @@
         </div>
         <div v-if="show" class="menu">
             <div v-for="(item,i) in pages" :key="i" class="menu-item">
-                <NuxtLink @click="show=!show" :to="item.to">
+                <NuxtLink @click.native="show=!show" :to="item.to">
                     {{ item.label }}
                 </NuxtLink>
             </div>
